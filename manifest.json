@@ -1,0 +1,23 @@
+{
+    "manifest_version" : 2,
+    "version" :"1.0",
+    "name" : "ClearTerms",
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+    "browser_action" : {
+        "default_popup" : "index.html"
+    },
+    "permissions" : [
+        "notifications",
+        "tabs",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["https://openai.com/policies/terms-of-use"],
+            "js" : ["contentScript.js"]
+        }
+    ]
+
+}
